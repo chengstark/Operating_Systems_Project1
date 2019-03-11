@@ -96,19 +96,19 @@ int RNG(int m){
 #ifdef debug
 		return 4;
 #else
-		return (int)( 100 * ( drand48() ) + 1); 
+		return (int)( 100 * ( drand48() ) + 1 ); 
 #endif
 	
 	}
 
 	while(1){
-		result = -log(drand48()) / Lambda;
+		result = -log( drand48() ) / Lambda;
 
 		if(result > Upperbound) continue;
 		else break;
 	}
 
-	result = (double)result * m;
+	result = (double)result * m + 1;
 
 	if(result == 0) result = 1;
 
@@ -131,8 +131,12 @@ void Generate_processes(Queue_Process* QP, int num_p){
 	for(int i = 0; i < num_p; i++){
 		Process* p = calloc(1, sizeof(Process));
 
+		//Assign PID (According to sample txt provided by Prof.)
+		p->PID = namelist[i];
+		
 		//Predict step 1
 		p->arrival = RNG(1);
+
 
 		//Predict step 2
 		p->num_CPU_burst = RNG(100);
@@ -151,9 +155,6 @@ void Generate_processes(Queue_Process* QP, int num_p){
 				p->IO_burst_time[a] = RNG(1);
 			}
 
-			if(i == 0){
-				printf("A: %d\n", p->CPU_burst_time[a]);
-			}
 		}
 		
 		* ptr = (Process *)p;
@@ -166,10 +167,6 @@ void Generate_processes(Queue_Process* QP, int num_p){
 
 	ptr = (Process**)(QP->processes);
 
-	//Assign PID afterhand
-	for(int i = 0; i < num_p; i++){
-		ptr[i]->PID = namelist[i];
-	}
 }
 
 //input:
@@ -304,10 +301,9 @@ void add_job_to_queue(Job* J, Queue_Job* QJ){
 
 	//If is FCFS or RR
 	else{
-		//do not sort
+
 	}
 }
-
 
 //Get next job available in the queue
 //the address of Job will be returned
