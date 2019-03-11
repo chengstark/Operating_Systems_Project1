@@ -1,0 +1,1132 @@
+3
+5
+6
+9
+17
+INFO: simulation start
+time 3ms: PID A, process arrival [Q <queue-contents>]
+adding to queue
+Queue info:  A-0 | X-X | X-X | X-X | X-X |
+
+time 3ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 5ms: PID B, process arrival [Q <queue-contents>]
+adding to queue
+Queue info:  B-0 | X-X | X-X | X-X | X-X |
+
+time 6ms: PID C, process arrival [Q <queue-contents>]
+adding to queue
+Queue info:  B-0 | C-0 | X-X | X-X | X-X |
+
+time 9ms: PID D, process arrival [Q <queue-contents>]
+adding to queue
+Queue info:  B-0 | C-0 | D-0 | X-X | X-X |
+
+time 17ms: PID E, process arrival [Q <queue-contents>]
+adding to queue
+Queue info:  B-0 | C-0 | D-0 | E-0 | X-X |
+
+time 28ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 28ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 29ms: PID B, process starts using the CPU [Q <queue-contents>]
+time 48ms: PID B, process finishes using the CPU [Q <queue-contents>]
+time 48ms: PID B, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 49ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 49ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 56ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 56ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 57ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 71ms: PID B, process finishs performing I/O [Q <queue-contents>]
+time 75ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 76ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 76ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 77ms: PID E, process starts using the CPU [Q <queue-contents>]
+time 86ms: PID E, process finishes using the CPU [Q <queue-contents>]
+time 86ms: PID E, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 87ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 100ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 100ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 101ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 101ms: PID B, process starts using the CPU [Q <queue-contents>]
+time 101ms: PID B, Process terminates by finishing its last CPU burst [Q <queue-contents>]
+time 102ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 108ms: PID E, process finishs performing I/O [Q <queue-contents>]
+time 119ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 119ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 120ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 128ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 130ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 130ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 131ms: PID E, process starts using the CPU [Q <queue-contents>]
+time 133ms: PID E, Process terminates by finishing its last CPU burst [Q <queue-contents>]
+time 134ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 144ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 151ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 152ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 152ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 153ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 166ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 170ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 170ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 171ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 191ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 196ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 196ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 197ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 199ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 212ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 212ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 213ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 217ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 217ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 218ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 218ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 232ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 233ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 233ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 234ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 256ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 260ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 260ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 261ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 272ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 288ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 288ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 289ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 295ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 295ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 296ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 296ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 302ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 302ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 303ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 311ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 314ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 314ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 315ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 316ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 331ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 337ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 337ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 338ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 344ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 344ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 345ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 356ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 356ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 362ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 362ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 372ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 375ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 389ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 389ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 390ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 393ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 409ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 409ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 410ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 416ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 433ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 433ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 434ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 441ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 441ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 442ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 448ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 448ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 449ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 449ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 455ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 467ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 470ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 470ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 471ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 490ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 490ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 491ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 496ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 500ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 500ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 501ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 501ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 502ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 520ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 520ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 521ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 534ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 534ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 535ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 538ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 538ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 541ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 541ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 553ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 560ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 564ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 564ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 565ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 586ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 591ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 591ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 592ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 614ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 614ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 614ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 615ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 625ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 625ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 626ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 626ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 634ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 654ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 654ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 655ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 659ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 659ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 660ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 670ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 683ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 687ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 687ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 688ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 689ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 699ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 699ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 700ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 710ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 728ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 728ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 729ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 743ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 744ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 744ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 745ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 763ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 763ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 764ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 765ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 775ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 775ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 776ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 792ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 794ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 801ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 801ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 802ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 804ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 812ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 812ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 813ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 823ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 829ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 829ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 830ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 833ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 857ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 857ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 858ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 860ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 860ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 861ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 873ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 873ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 879ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 879ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 885ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 902ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 907ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 907ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 908ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 911ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 911ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 912ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 915ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 918ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 918ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 919ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 923ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 923ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 928ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 928ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 929ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 936ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 936ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 937ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 938ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 938ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 939ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 939ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 940ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 950ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 950ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 951ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 951ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 951ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 953ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 953ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 956ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 966ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 966ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 967ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 971ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 971ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 977ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 977ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 979ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 980ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 996ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 996ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 997ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 999ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 999ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1000ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1010ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1010ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1011ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1011ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1024ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1029ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1029ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1030ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1032ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1058ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1058ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1058ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1059ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1073ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1080ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1080ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1081ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1087ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1087ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1088ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1096ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1098ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1109ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1109ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1110ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1119ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1119ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1120ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1120ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1120ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1129ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1129ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1138ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1145ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1145ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1146ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1147ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1151ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1155ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1155ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1156ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1163ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1177ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1177ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1178ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1191ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1191ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1192ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1196ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1203ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1203ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1204ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1212ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1229ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1232ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1232ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1233ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1233ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1242ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1242ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1243ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1244ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1244ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1245ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1248ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1248ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1256ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1256ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1265ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1271ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1271ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1272ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1275ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1275ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1275ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1276ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1284ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1284ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1292ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1292ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1296ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1300ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1317ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1317ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1318ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1319ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1319ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1320ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1322ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1329ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1329ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1330ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1339ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1341ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1350ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1350ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1351ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1357ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1357ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1358ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1366ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1366ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1384ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1384ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1385ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1391ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1408ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1408ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1409ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1428ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1429ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1429ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1430ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1437ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1437ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1438ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1444ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1450ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1452ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1452ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1453ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1454ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1456ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1456ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1457ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1459ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1463ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1463ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1464ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1467ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1467ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1468ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1489ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1492ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1493ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1493ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1494ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1499ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1515ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1515ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1516ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1531ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1543ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1543ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1544ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1565ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1565ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1566ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1571ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1573ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1584ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1584ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1585ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1587ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1607ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1607ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1608ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1610ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1617ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1617ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1618ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1621ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1627ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1627ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1628ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1639ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1639ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1640ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1640ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1640ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1641ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1641ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1642ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1657ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1663ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1663ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1664ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1675ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1676ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1676ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1677ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1689ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1689ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1690ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1694ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1708ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1711ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1711ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1712ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1724ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1724ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1725ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1725ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1725ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1731ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1731ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1738ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1750ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1750ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1751ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1752ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1770ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1770ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1771ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1777ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1790ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1790ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1791ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1795ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1816ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1816ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1817ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1817ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1830ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1830ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1831ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1834ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1850ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1859ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1859ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1860ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1861ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1874ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1874ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1875ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1887ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1896ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1896ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1897ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1901ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1924ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1924ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1925ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1937ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1951ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1951ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1952ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1956ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1956ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1957ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1957ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1964ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1964ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1965ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1978ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 1979ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 1984ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 1984ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1985ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 1989ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 1989ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1990ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 1993ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 1996ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 1996ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 1997ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 1999ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2004ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2015ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2015ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2016ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2026ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2026ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2027ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2039ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2047ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2047ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2048ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2054ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2063ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2075ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2075ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2076ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2096ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2102ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2102ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2103ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2111ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2111ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2112ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2116ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2127ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2140ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2140ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2141ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2151ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2151ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2152ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2152ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2160ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2179ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2179ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2180ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2189ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2195ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2195ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2196ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2204ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2211ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2211ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2212ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2235ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2236ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2236ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2237ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2258ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2258ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2259ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2263ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2263ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2265ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2265ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2266ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2277ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2277ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2278ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2278ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2279ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2292ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2292ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2293ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2293ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2293ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2293ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2294ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2313ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2318ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2318ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2319ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2329ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2329ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2330ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2335ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2342ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2348ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2348ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2349ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2371ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2371ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2372ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2375ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2384ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2399ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2399ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2400ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2402ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2421ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2421ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2422ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2426ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2435ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2435ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2436ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2456ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2456ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2457ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2458ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2458ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2461ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2461ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2463ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2463ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2464ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2464ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2464ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2479ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2480ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2480ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2481ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2502ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2503ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2503ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2504ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2517ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2517ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2518ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2520ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2542ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2545ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2545ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2546ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2563ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2563ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2564ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2567ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2571ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2571ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2571ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2572ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2572ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2572ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2573ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2580ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2584ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2584ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2585ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2591ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2600ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2600ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2601ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2608ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2617ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2617ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2618ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2620ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2634ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2643ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2643ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2644ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2648ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2649ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2649ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2650ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2663ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2665ms: PID A, process finishes using the CPU [Q <queue-contents>]
+time 2665ms: PID A, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2666ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2692ms: PID A, process finishs performing I/O [Q <queue-contents>]
+time 2693ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2693ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2694ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2708ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2709ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2709ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2710ms: PID A, process starts using the CPU [Q <queue-contents>]
+time 2723ms: PID A, Process terminates by finishing its last CPU burst [Q <queue-contents>]
+time 2724ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2724ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2728ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2728ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2729ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2732ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2744ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2744ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2745ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2752ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2758ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2758ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2759ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2777ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2783ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2783ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2784ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2784ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2784ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2787ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2787ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2795ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2795ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2805ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2805ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2820ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2824ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2824ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2825ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2834ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2842ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2842ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2843ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2857ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2871ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2871ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2872ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2872ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2872ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2872ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2873ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2875ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2876ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2876ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2877ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2884ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2884ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2887ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2887ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2889ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2889ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2898ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2898ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2903ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2912ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2912ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2913ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2917ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2920ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2920ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2921ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2923ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2923ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2940ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2940ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2945ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2945ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2952ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2952ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2962ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 2965ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 2965ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2966ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 2966ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 2982ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 2982ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 2983ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 2988ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3008ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 3008ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3009ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 3009ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3009ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3009ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3010ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 3017ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3027ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 3027ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3028ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3049ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3049ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3051ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 3051ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 3061ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3072ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 3072ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3073ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3087ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3087ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3091ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 3091ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 3108ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3111ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 3111ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3112ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3112ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3112ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3137ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 3137ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 3141ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3146ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 3146ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3147ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3148ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 3153ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3153ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3154ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 3175ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3181ms: PID C, process finishes using the CPU [Q <queue-contents>]
+time 3181ms: PID C, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3182ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3186ms: PID C, process finishs performing I/O [Q <queue-contents>]
+time 3207ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3207ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3208ms: PID C, process starts using the CPU [Q <queue-contents>]
+time 3222ms: PID C, Process terminates by finishing its last CPU burst [Q <queue-contents>]
+time 3224ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3224ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3250ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3250ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3258ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3258ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3277ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3277ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3286ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3286ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3299ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3299ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3328ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3328ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3333ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3333ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3341ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3341ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3341ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3341ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3354ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3354ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3378ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3378ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3385ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3385ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3400ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3400ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3421ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3421ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3427ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3427ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3439ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3439ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3439ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3439ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3451ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3451ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3467ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3467ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3491ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3491ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3514ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3514ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3524ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3524ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3524ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3524ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3550ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3550ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3571ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3571ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3576ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3576ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3579ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3579ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3589ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3589ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3602ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3602ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3607ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3607ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3620ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3620ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3645ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3645ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3656ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3656ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3675ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3675ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3685ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3685ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3703ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3703ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3728ms: PID D, process finishes using the CPU [Q <queue-contents>]
+time 3728ms: PID D, process starts performing I/O [Q <queue-contents>]
+adding to queue
+time 3751ms: PID D, process finishs performing I/O [Q <queue-contents>]
+time 3751ms: PID D, process starts using the CPU [Q <queue-contents>]
+time 3759ms: PID D, Process terminates by finishing its last CPU burst [Q <queue-contents>]
+time 3759ms: Simulator ended for SFJ [Q empty]
