@@ -128,14 +128,7 @@ void Simulation(int type){
 			
 			//Check if there is a need for preemption
 			if(i == 0 && type == SRT){
-				if(next_job -> CPU_burst_time < run_job -> CPU_burst_time){
-					switch_in = get_next_job_inqueue(&job_q);
-					update_preemption_job(run_job);
-					if(switch_in != NULL) { 
-						countdown_in = t_cont_switch / 2; 
-						switch_flag = 1;
-					}
-				}
+				
 			}
 
 			//Add a job to a job queue
@@ -156,58 +149,6 @@ void Simulation(int type){
 
 		//Process move_in content, this operation may start only after move_out
 		//opeation being complete
-		
-		if (switch_in == NULL && switch_out == NULL){
-			//Run current process
-			if (run_job != NULL) { 
-
-				int state = run_a_job(run_job);
-				countdown_RR--;
-				
-				//Time is up for RR
-				if(type == RR && countdown_RR <= 0){
-					switch_in = get_next_job_inqueue(&job_q);
-					update_preemption_job(run_job);
-					if(switch_in != NULL) { 
-						countdown_in = t_cont_switch / 2; 
-						switch_flag = 1;
-					}
-				}
-		
-				//If finish CPU burst
-				if(state == 1 || state == 2){
-
-					//Set a flag to move out the content from cache
-					countdown_out = t_cont_switch / 2;
-				}
-
-				//IO Blocked, add it back to the queue and do the IO part
-				if(state == 1) {
-					sprintf(buffer, "PID %c, process finishes using the CPU", run_job->PID);
-					printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
-					
-					sprintf(buffer, "PID %c, process starts performing I/O", run_job->PID);
-					printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
-					
-					switch_out = run_job;
-					update_context_switch(&(summarys[type]));
-					run_job = NULL;
-				}
-
-				//Finished housekeeping the finished job
-				else if(state == 2) {
-					
-					sprintf(buffer, "PID %c, Process terminates by finishing its last CPU burst", run_job->PID);
-					printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
-
-					Deinit_J(run_job);
-					free(run_job);
-					run_job = NULL;
-					switch_out = NULL;
-				}
-			}
-		}
-
 		if (switch_in != NULL && switch_out == NULL){
 
 			//Check if the operation was done in the last second
@@ -229,11 +170,56 @@ void Simulation(int type){
 			if(switch_out != NULL){
 				update_finish_job(switch_out, timer);
 				update_avg_time( switch_out, &(summarys[type]) );
+
 				IOBlock_job_update(switch_out, &job_q);
 				switch_out = NULL;
 			}
 
 			countdown_out--;
+		}
+
+		//Run current process
+		if (run_job != NULL) { 
+
+			int state = run_a_job(run_job);
+			countdown_RR--;
+			
+			//Time is up for RR
+			if(type == RR && countdown_RR <= 0){
+
+			}
+	
+			//If finish CPU burst
+			if(state == 1 || state == 2){
+
+				//Set a flag to move out the content from cache
+				countdown_out = t_cont_switch / 2;
+			}
+
+			//IO Blocked, add it back to the queue and do the IO part
+			if(state == 1) {
+				sprintf(buffer, "PID %c, process finishes using the CPU", run_job->PID);
+				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+				
+				sprintf(buffer, "PID %c, process starts performing I/O", run_job->PID);
+				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+				
+				switch_out = run_job;
+				update_context_switch(&(summarys[type]));
+				run_job = NULL;
+			}
+
+			//Finished housekeeping the finished job
+			else if(state == 2) {
+				
+				sprintf(buffer, "PID %c, Process terminates by finishing its last CPU burst", run_job->PID);
+				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+
+				Deinit_J(run_job);
+				free(run_job);
+				run_job = NULL;
+				switch_out = NULL;
+			}
 		}
 
 		//If all works are done
