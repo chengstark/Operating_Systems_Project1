@@ -95,7 +95,7 @@ void Simulation(int type){
 	Generate_processes(&process_q, num_process);
 	Init_Job_Queue(&job_q, num_process, type);
 	
-	printf("INFO: simulation start\n");
+//	printf("INFO: simulation start\n");
 
 	Job* run_job = NULL;
 	Job* switch_in = NULL;
@@ -109,7 +109,7 @@ void Simulation(int type){
 	for (timer = 0; ; timer++){
 		int index = 0;
 
-		printf("%d s\n", timer);
+//		printf("%d s\n", timer);
 		
 		//Finish IO work
 		do_IO_update(&job_q, timer);
@@ -123,8 +123,8 @@ void Simulation(int type){
 			process_q.processes[index] = NULL;
 
 			update_CPUburst_job(temp_ptr);
-			sprintf(buffer, "PID %c, process arrival", temp_ptr->PID);
-			printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+//			sprintf(buffer, "PID %c, process arrival", temp_ptr->PID);
+//			printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
 			
 			//Check if there is a need for preemption
 			if(i == 0 && type == SRT){
@@ -156,8 +156,8 @@ void Simulation(int type){
 				run_job = switch_in;
 				switch_in = NULL;
 				update_CPUburst_job(run_job);
-				sprintf(buffer, "PID %c, process starts using the CPU", run_job->PID);
-				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+//				sprintf(buffer, "PID %c, process starts using the CPU", run_job->PID);
+//				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
 				switch_flag = 0;
 			}
 			countdown_in--;
@@ -198,11 +198,11 @@ void Simulation(int type){
 
 			//IO Blocked, add it back to the queue and do the IO part
 			if(state == 1) {
-				sprintf(buffer, "PID %c, process finishes using the CPU", run_job->PID);
-				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+//				sprintf(buffer, "PID %c, process finishes using the CPU", run_job->PID);
+//				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
 				
-				sprintf(buffer, "PID %c, process starts performing I/O", run_job->PID);
-				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+//				sprintf(buffer, "PID %c, process starts performing I/O", run_job->PID);
+//				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
 				
 				switch_out = run_job;
 				update_context_switch(&(summarys[type]));
@@ -212,8 +212,8 @@ void Simulation(int type){
 			//Finished housekeeping the finished job
 			else if(state == 2) {
 				
-				sprintf(buffer, "PID %c, Process terminates by finishing its last CPU burst", run_job->PID);
-				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
+//				sprintf(buffer, "PID %c, Process terminates by finishing its last CPU burst", run_job->PID);
+//				printf("time %dms: %s [Q <queue-contents>]\n", timer, buffer);
 
 				Deinit_J(run_job);
 				free(run_job);
@@ -246,7 +246,7 @@ void Simulation(int type){
 					break;
 			}
 			
-			printf("time %dms: Simulator ended for %s [Q empty]\n", timer, algo_name);
+//			printf("time %dms: Simulator ended for %s [Q empty]\n", timer, algo_name);
 
 			break;
 		}

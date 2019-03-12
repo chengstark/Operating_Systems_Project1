@@ -86,6 +86,8 @@ void set_Tcontent(int time) { t_cont_switch = time; }
 //m -- multiple
 //generated legal random number will be returned
 //If 100 is set, exp_distributation will not be used
+//If 1 is set, floor() will be used
+//if 2 is set, ceil() will be used
 int RNG(int m){
 
 	double result = 0;
@@ -102,15 +104,16 @@ int RNG(int m){
 	}
 
 	while(1){
-		result = -log( drand48() ) / Lambda;
 
+		if (m == 1) result = floor( -log( drand48() ) / Lambda );
+		
+		else if (m == 2) result = ceil( -log( drand48() ) / Lambda );
+	
 		if(result > Upperbound) continue;
 		else break;
 	}
 
-	result = (double)result * m + 1;
-
-	if(result == 0) result = 1;
+	result = (double)result;
 
 	return (int)result;
 }
@@ -137,9 +140,11 @@ void Generate_processes(Queue_Process* QP, int num_p){
 		//Predict step 1
 		p->arrival = RNG(1);
 
-
 		//Predict step 2
 		p->num_CPU_burst = RNG(100);
+		
+		printf("Process %c [NEW] (arrival time %d ms) %d CPU bursts\n",
+				p->PID, p->arrival, p->num_CPU_burst);
 
 		p->CPU_burst_time = calloc(p->num_CPU_burst, sizeof(int));
 		p->IO_burst_time = calloc(p->num_CPU_burst, sizeof(int));
@@ -147,12 +152,18 @@ void Generate_processes(Queue_Process* QP, int num_p){
 		//Predict step 3
 		for(int a = 0; a < p->num_CPU_burst; a++){
 			if(a == (p->num_CPU_burst - 1)){
-				p->CPU_burst_time[a] = RNG(1);
+				p->CPU_burst_time[a] = RNG(2);
 				p->IO_burst_time[a] = 0;
+				
+				printf("--> CPU burst %d ms\n",
+						p->CPU_burst_time[a]);
 			}
 			else{
-				p->CPU_burst_time[a] = RNG(1);
-				p->IO_burst_time[a] = RNG(1);
+				p->CPU_burst_time[a] = RNG(2);
+				p->IO_burst_time[a] = RNG(2);
+
+				printf("--> CPU burst %d ms --> I/O burst %d ms\n",
+						p->CPU_burst_time[a],p->IO_burst_time[a]);
 			}
 
 		}
@@ -238,7 +249,7 @@ int compare_job_prior_1(const void* a, const void* b){
 void estimate_CPU_burst(Job* a){
 	int temp = a->estimate_burst_time;
 	a->estimate_burst_time = (double)Alpha * a->CPU_burst + (double)(1 - Alpha)* temp;
-	printf("%c: %d est.\n", a->PID, a->estimate_burst_time);
+//	printf("%c: %d est.\n", a->PID, a->estimate_burst_time);
 }
 
 //Check if next process is arrived
@@ -396,7 +407,7 @@ void do_IO_update(Queue_Job* QJ, int time){
 		if(ptr == NULL) continue;
 		if(ptr->state == BLOCKED){
 				
-			char buffer[100];
+//			char buffer[100];
 			
 			ptr->IO_burst_time[ptr->index] -= 1;
 
@@ -404,8 +415,8 @@ void do_IO_update(Queue_Job* QJ, int time){
 				ptr->index++;
 				ptr->state = READY;
 
-				sprintf(buffer, "PID %c, process finishs performing I/O", ptr->PID);
-				printf("time %dms: %s [Q <queue-contents>]\n", time, buffer);
+//				sprintf(buffer, "PID %c, process finishs performing I/O", ptr->PID);
+//				printf("time %dms: %s [Q <queue-contents>]\n", time, buffer);
 
 				update_CPUburst_job(ptr);
 			}
@@ -421,18 +432,18 @@ void do_IO_update(Queue_Job* QJ, int time){
 //Get the info of waiting queue
 //UPDATE REQUIRED: Need to change to satisfy the project requirement
 void get_Job_Queue(Queue_Job* QJ){
-	printf("Queue info: ");
+//	printf("Queue info: ");
 	for(int i = 0; i < QJ->size; i++) {
 		if(QJ->jobs[i] != NULL){
-			printf(" %c-%d state %d |", QJ->jobs[i]->PID, QJ->jobs[i]->estimate_burst_time,
-					QJ->jobs[i]->state);
+//			printf(" %c-%d state %d |", QJ->jobs[i]->PID, QJ->jobs[i]->estimate_burst_time,
+//					QJ->jobs[i]->state);
 		}
 
 		else{
-			printf(" X-X |");
+//			printf(" X-X |");
 		}
 	}
-	printf("\n\n");
+//	printf("\n\n");
 }
 
 //Update the arrival time of current CPU burst for a job
