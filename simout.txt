@@ -1,0 +1,24 @@
+Algorithm SFJ
+-- average CPU burst time: 127.811157 ms
+-- average wait time: 1647.354492 ms
+-- average turnaround time: 1779.165527 ms
+-- total number of context switches: 15
+-- total number of preemptions: 0
+Algorithm SFJ
+-- average CPU burst time: 0.000000 ms
+-- average wait time: 0.000000 ms
+-- average turnaround time: 0.000000 ms
+-- total number of context switches: 0
+-- total number of preemptions: 0
+Algorithm SFJ
+-- average CPU burst time: 0.000000 ms
+-- average wait time: 0.000000 ms
+-- average turnaround time: 0.000000 ms
+-- total number of context switches: 0
+-- total number of preemptions: 0
+Algorithm SFJ
+-- average CPU burst time: 0.000000 ms
+-- average wait time: 0.000000 ms
+-- average turnaround time: 0.000000 ms
+-- total number of context switches: 0
+-- total number of preemptions: 0
