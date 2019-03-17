@@ -478,10 +478,11 @@ void do_IO_update(Queue_Job* QJ, int time){
 				ptr->state = READY;
 
 				get_Job_Queue(QJ, queue);
-				sprintf(buffer, "Process %c (tau %dms) completed I/O; added to ready queue [Q %s]", 
-						ptr->PID, ptr->estimate_burst_time, queue);
-				printf("time %dms: %s]\n", time, buffer);
-
+				if(time<=999) {
+					sprintf(buffer, "Process %c (tau %dms) completed I/O; added to ready queue [Q %s]",
+							ptr->PID, ptr->estimate_burst_time, queue);
+					printf("time %dms: %s]\n", time, buffer);
+				}
 				update_CPUburst_job(ptr);
 			}
 		}

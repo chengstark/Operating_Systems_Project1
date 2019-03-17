@@ -214,10 +214,11 @@ void Simulation(int type){
 				update_CPUburst_job(run_job);
 
 				get_Job_Queue(&job_q, queue);
-				sprintf(buffer, "Process %c started using the CPU for %dms burst [Q %s]", 
-						run_job->PID, run_job->CPU_burst, queue);
-				printf("time %dms: %s\n", timer, buffer);
-				
+				if(timer <= 999) {
+					sprintf(buffer, "Process %c started using the CPU for %dms burst [Q %s]",
+							run_job->PID, run_job->CPU_burst, queue);
+					printf("time %dms: %s\n", timer, buffer);
+				}
 				switch_flag = 0;
 			}
 			countdown_in--;
@@ -265,21 +266,23 @@ void Simulation(int type){
 
 			//IO Blocked, add it back to the queue and do the IO part
 			if(state == 1) {
-				
 				get_Job_Queue(&job_q, queue);
-				sprintf(buffer, "Process %c completed a CPU burst; %d bursts to go [Q %s]", 
-						run_job->PID, (run_job->num_CPU_burst - run_job->index), queue);
-				printf("time %dms: %s\n", timer, buffer);
-			
-				estimate_CPU_burst(run_job);
-				sprintf(buffer, "Recalculated tau = %dms for process %c [Q %s]", 
-						run_job->estimate_burst_time, run_job->PID, queue);
-				printf("time %dms: %s\n", timer, buffer);
-				
-				sprintf(buffer, "Process %c switching out of CPU; will block on I/O until time %dms [Q %s]", 
-						run_job->PID, run_job->IO_burst_time[run_job->index], queue);
-				printf("time %dms: %s\n", timer, buffer);
 
+				if (timer <= 999){
+					sprintf(buffer, "Process %c completed a CPU burst; %d bursts to go [Q %s]",
+							run_job->PID, (run_job->num_CPU_burst - run_job->index), queue);
+					printf("time %dms: %s\n", timer, buffer);
+				}
+				estimate_CPU_burst(run_job);
+				if (timer <= 999) {
+					sprintf(buffer, "Recalculated tau = %dms for process %c [Q %s]",
+							run_job->estimate_burst_time, run_job->PID, queue);
+					printf("time %dms: %s\n", timer, buffer);
+
+					sprintf(buffer, "Process %c switching out of CPU; will block on I/O until time %dms [Q %s]",
+							run_job->PID, run_job->IO_burst_time[run_job->index], queue);
+					printf("time %dms: %s\n", timer, buffer);
+				}
 				switch_out = run_job;
 				update_context_switch(&(summarys[type]));
 				run_job = NULL;
