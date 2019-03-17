@@ -92,16 +92,18 @@ typedef struct {
 	char size;
 	Job** jobs;
 	char type;
+	char RR_behavior;						//Whether added to the end(default) or the beginning
 } Queue_Job;
 
-void Init_Job_Queue(Queue_Job* QJ, int num_p, char type);
+void Init_Job_Queue(Queue_Job* QJ, int num_p, char type, char RR_behavior);
 void Deinit_JQ(Queue_Job* a);
 
 void add_job_to_queue(Job* J, Queue_Job* QJ);
 int compare_job_prior_1(const void* a, const void* b);
 int compare_job_prior_2(const void* a, const void* b);
+int compare_job_prior_3(const void* a, const void* b);
 
-void get_Job_Queue(Queue_Job* QJ);
+void get_Job_Queue(Queue_Job* QJ, char* queue);
 Job* get_next_job_inqueue(Queue_Job* QJ);
 
 void do_IO_update(Queue_Job* QJ, int time);
@@ -109,16 +111,21 @@ void IOBlock_job_update(Job* J, Queue_Job* QJ);
 
 //Store summary info
 typedef struct {
-	int avg_CPU_burst;
-	int avg_wait_time;
-	int avg_turnaround;
+	char AlgoName;
+	float avg_CPU_burst;
+	float avg_wait_time;
+	float avg_turnaround;
 	int num_context_switch;
 	int num_preemptions;
 } Summary;
 
+void update_AlgoName(char ID, Summary* S);
 void update_avg_time(Job* J, Summary* S);
 void update_preemptions(Summary* S);
 void update_context_switch(Summary* S);
+void writef_summary(Summary* S, FILE* wfile);
+
+void translate_AlgoName(char ID, char* dst);
 
 int check_all_job_done(Queue_Process* QP, Queue_Job* QJ);
 

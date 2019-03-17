@@ -86,8 +86,6 @@ void set_Tcontent(int time) { t_cont_switch = time; }
 //m -- multiple
 //generated legal random number will be returned
 //If 100 is set, exp_distributation will not be used
-//If 1 is set, floor() will be used
-//if 2 is set, ceil() will be used
 int RNG(int m){
 
 	double result = 0;
@@ -104,16 +102,15 @@ int RNG(int m){
 	}
 
 	while(1){
+		result = -log( drand48() ) / Lambda;
 
-		if (m == 1) result = floor( -log( drand48() ) / Lambda );
-		
-		else if (m == 2) result = ceil( -log( drand48() ) / Lambda );
-	
 		if(result > Upperbound) continue;
 		else break;
 	}
 
-	result = (double)result;
+	result = (double)result * m + 1;
+
+	if(result == 0) result = 1;
 
 	return (int)result;
 }
@@ -135,16 +132,13 @@ void Generate_processes(Queue_Process* QP, int num_p){
 		Process* p = calloc(1, sizeof(Process));
 
 		//Assign PID (According to sample txt provided by Prof.)
-		p->PID = namelist[i];
 		
 		//Predict step 1
 		p->arrival = RNG(1);
 
+
 		//Predict step 2
 		p->num_CPU_burst = RNG(100);
-		
-		printf("Process %c [NEW] (arrival time %d ms) %d CPU bursts\n",
-				p->PID, p->arrival, p->num_CPU_burst);
 
 		p->CPU_burst_time = calloc(p->num_CPU_burst, sizeof(int));
 		p->IO_burst_time = calloc(p->num_CPU_burst, sizeof(int));
@@ -152,18 +146,12 @@ void Generate_processes(Queue_Process* QP, int num_p){
 		//Predict step 3
 		for(int a = 0; a < p->num_CPU_burst; a++){
 			if(a == (p->num_CPU_burst - 1)){
-				p->CPU_burst_time[a] = RNG(2);
+				p->CPU_burst_time[a] = RNG(1);
 				p->IO_burst_time[a] = 0;
-				
-				printf("--> CPU burst %d ms\n",
-						p->CPU_burst_time[a]);
 			}
 			else{
-				p->CPU_burst_time[a] = RNG(2);
-				p->IO_burst_time[a] = RNG(2);
-
-				printf("--> CPU burst %d ms --> I/O burst %d ms\n",
-						p->CPU_burst_time[a],p->IO_burst_time[a]);
+				p->CPU_burst_time[a] = RNG(1);
+				p->IO_burst_time[a] = RNG(1);
 			}
 
 		}
@@ -176,18 +164,22 @@ void Generate_processes(Queue_Process* QP, int num_p){
 	//Sort the arrival time in the beginning
 	qsort(QP->processes, num_p, sizeof(Process *), compare_func_proc); 
 
-	ptr = (Process**)(QP->processes);
-
+	for(int i = 0; i < num_p; i++){
+		if(QP->processes[i] != NULL){ 
+			QP->processes[i]->PID = namelist[i];
+		}
+	}
 }
 
 //input:
 //QJ -- address of Job Queue
 //num_p -- # of maximum possible processes that could be added to
 //the Ready queue
-void Init_Job_Queue(Queue_Job* QJ, int num_p, char type){
+void Init_Job_Queue(Queue_Job* QJ, int num_p, char type, char RR_behavior){
 	QJ->size = num_p;
 	QJ->jobs = calloc(num_p, sizeof(Job *));
 	QJ->type = type;
+	QJ->RR_behavior = RR_behavior;
 
 	for(int i = 0; i < QJ->size; i++) { QJ->jobs[i] = NULL; }
 }
@@ -244,12 +236,63 @@ int compare_job_prior_1(const void* a, const void* b){
 		else return 0;
 	}
 }
+//Sort by normal order of arrival time
+int compare_job_prior_2(const void* a, const void* b){
+
+	Job** ja = (Job **)a;
+	Job** jb = (Job **)b;
+
+	//Move all ready job to the front
+	if(ja[0] == NULL) return 10;
+	if(jb[0] == NULL) return -10;
+
+	if(ja[0]->state > jb[0]->state)	return 5;
+	else if(ja[0]->state < jb[0]->state) return -5;
+
+	if(ja[0]->arrival == jb[0]->arrival){
+		if(ja[0]->PID > jb[0]->PID) return 1;
+		else if(ja[0]->PID < jb[0]->PID) return -1;
+		else return 0;
+	}
+
+	else{
+		if(ja[0]->arrival > jb[0]->arrival) return 2;
+		else if(ja[0]->arrival < jb[0]->arrival) return -2;
+		else return 0;
+	}
+
+}
+
+//Sort by reverse order of arrival time
+int compare_job_prior_3(const void* a, const void* b){
+
+	Job** ja = (Job **)a;
+	Job** jb = (Job **)b;
+
+	//Move all ready job to the front
+	if(ja[0] == NULL) return 10;
+	if(jb[0] == NULL) return -10;
+
+	if(ja[0]->state > jb[0]->state)	return 5;
+	else if(ja[0]->state < jb[0]->state) return -5;
+
+	if(ja[0]->arrival == jb[0]->arrival){
+		if(ja[0]->PID > jb[0]->PID) return 1;
+		else if(ja[0]->PID < jb[0]->PID) return -1;
+		else return 0;
+	}
+
+	else{
+		if(ja[0]->arrival > jb[0]->arrival) return -2;
+		else if(ja[0]->arrival < jb[0]->arrival) return 2;
+		else return 0;
+	}
+}
 
 //Update next estimate CPU burst time after last CPU burst completed
 void estimate_CPU_burst(Job* a){
 	int temp = a->estimate_burst_time;
 	a->estimate_burst_time = (double)Alpha * a->CPU_burst + (double)(1 - Alpha)* temp;
-//	printf("%c: %d est.\n", a->PID, a->estimate_burst_time);
 }
 
 //Check if next process is arrived
@@ -309,10 +352,17 @@ void add_job_to_queue(Job* J, Queue_Job* QJ){
 	if(QJ->type == SJF || QJ->type == SRT){
 		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_1);		
 	}
+	
+	else if(QJ->type == FCFS){
+		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_2);		
+	}
 
-	//If is FCFS or RR
-	else{
+	else if(QJ->type == RR && QJ->RR_behavior == END){
+		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_2);		
+	}
 
+	else if(QJ->type == RR && QJ->RR_behavior == BEGINNING){
+		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_3);		
 	}
 }
 
@@ -337,6 +387,19 @@ Job* get_next_job_inqueue(Queue_Job* QJ){
 		if(QJ->type == SJF || QJ->type == SRT){
 			qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_1);
 		}
+	
+		else if(QJ->type == FCFS){
+			qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_2);		
+		}
+
+		else if(QJ->type == RR && QJ->RR_behavior == END){
+			qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_2);		
+		}
+
+		else if(QJ->type == RR && QJ->RR_behavior == BEGINNING){
+			qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_3);		
+		}
+
 
 		return next;
 	}
@@ -375,9 +438,6 @@ int run_a_job(Job* J){
 void IOBlock_job_update(Job* J, Queue_Job* QJ){
 	J->state = BLOCKED;
 
-	//Update CPU burst guess
-	estimate_CPU_burst(J);
-
 	//Add it back to queue(fake) to finish its IO work
 	add_job_to_queue(J, QJ);
 }
@@ -407,16 +467,20 @@ void do_IO_update(Queue_Job* QJ, int time){
 		if(ptr == NULL) continue;
 		if(ptr->state == BLOCKED){
 				
-//			char buffer[100];
 			
 			ptr->IO_burst_time[ptr->index] -= 1;
 
 			if(ptr->IO_burst_time[ptr->index] < 0){
+				char buffer[100];
+				char queue[100];
+				
 				ptr->index++;
 				ptr->state = READY;
 
-//				sprintf(buffer, "PID %c, process finishs performing I/O", ptr->PID);
-//				printf("time %dms: %s [Q <queue-contents>]\n", time, buffer);
+				get_Job_Queue(QJ, queue);
+				sprintf(buffer, "Process %c (tau %dms) completed I/O; added to ready queue [Q %s]", 
+						ptr->PID, ptr->estimate_burst_time, queue);
+				printf("time %dms: %s]\n", time, buffer);
 
 				update_CPUburst_job(ptr);
 			}
@@ -427,24 +491,45 @@ void do_IO_update(Queue_Job* QJ, int time){
 	if(QJ->type == SJF || QJ->type == SRT){
 		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_1);		
 	}
+
+	else if(QJ->type == FCFS){
+		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_2);		
+	}
+
+	else if(QJ->type == RR && QJ->RR_behavior == END){
+		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_2);		
+	}
+
+	else if(QJ->type == RR && QJ->RR_behavior == BEGINNING){
+		qsort(QJ->jobs, QJ->size, sizeof(Job *), compare_job_prior_3);		
+	}
 }
 
 //Get the info of waiting queue
-//UPDATE REQUIRED: Need to change to satisfy the project requirement
-void get_Job_Queue(Queue_Job* QJ){
-//	printf("Queue info: ");
-	for(int i = 0; i < QJ->size; i++) {
-		if(QJ->jobs[i] != NULL){
-//			printf(" %c-%d state %d |", QJ->jobs[i]->PID, QJ->jobs[i]->estimate_burst_time,
-//					QJ->jobs[i]->state);
-		}
+//Remember to free after use
+void get_Job_Queue(Queue_Job* QJ, char* queue){
+	char* temp = calloc(100, sizeof(char));
+	int index = 0;
 
-		else{
-//			printf(" X-X |");
+	for(int i = 0; i < QJ->size; i++) {
+		if(QJ->jobs[i] != NULL && QJ->jobs[i]->state == READY){
+			temp[index] = QJ->jobs[i]->PID; index++;
+			temp[index] = ' '; index++;
 		}
 	}
-//	printf("\n\n");
+
+	if (index != 0) index--;
+
+	temp[index] = '\0';
+
+	strcpy(queue, temp);
+
+	queue[index] = '\0';
+	
+	free(temp);
 }
+
+void update_AlgoName(char ID, Summary* S) { S->AlgoName = ID; }
 
 //Update the arrival time of current CPU burst for a job
 void update_arrival_job(Job* J, int time) { J->arrival = time; }
@@ -490,3 +575,60 @@ void update_preemptions(Summary* S) {
 void update_context_switch(Summary* S) {
 	S->num_context_switch++;
 }
+
+void writef_summary(Summary* S, FILE* wfile){
+	char buffer[100];
+	char algo_name[5];
+
+	translate_AlgoName(S->AlgoName, algo_name);
+
+	sprintf(buffer, "Algorithm %s\n", algo_name);
+	fputs(buffer, wfile);
+
+	bzero(buffer, strlen(buffer));
+	sprintf(buffer, "-- average CPU burst time: %f ms\n", S->avg_CPU_burst);
+	fputs(buffer, wfile);
+	
+	bzero(buffer, strlen(buffer));
+	sprintf(buffer, "-- average wait time: %f ms\n", S->avg_wait_time);
+	fputs(buffer, wfile);
+
+
+	bzero(buffer, strlen(buffer));
+	sprintf(buffer, "-- average turnaround time: %f ms\n", S->avg_turnaround);
+	fputs(buffer, wfile);
+
+
+	bzero(buffer, strlen(buffer));
+	sprintf(buffer, "-- total number of context switches: %d\n", S->num_context_switch);
+	fputs(buffer, wfile);
+
+	bzero(buffer, strlen(buffer));
+	sprintf(buffer, "-- total number of preemptions: %d\n", S->num_preemptions);
+	fputs(buffer, wfile);
+}
+
+void translate_AlgoName(char ID, char* dst){
+
+	bzero(dst, 5);
+
+	switch(ID){
+	
+		case SJF: 
+			strcpy(dst, "SFJ");
+			break;
+		
+		case SRT:
+			strcpy(dst, "SRT");
+			break;
+
+		case FCFS:
+			strcpy(dst, "FCFS");
+			break;
+
+		case RR:
+			strcpy(dst, "RR");
+			break;
+	}
+}
+
