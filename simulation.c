@@ -100,6 +100,12 @@ void Simulation(int type){
 	Generate_processes(&process_q, num_process);
 	Init_Job_Queue(&job_q, num_process, type, RR_behavior);
 	update_AlgoName(type, &(summarys[type]) );
+
+	for (int i = 0; i < num_process; i++){
+		printf("Process %c [NEW] (arrival time %d ms) %d CPU bursts\n", 
+				process_q.processes[i]->PID, process_q.processes[i]->arrival, 
+				process_q.processes[i]->num_CPU_burst); 
+	}
 	
 	Job* run_job = NULL;
 	Job* switch_in = NULL;
@@ -144,11 +150,11 @@ void Simulation(int type){
 				if(run_job->estimate_burst_time > temp_ptr->estimate_burst_time){
 					
 					switch_in = temp_ptr;
-					countdown_in = t_cont_switch / 2; 
+					countdown_in = t_cont_switch; 
 					switch_flag = 1;
 
 					switch_out = run_job;
-					countdown_out = t_cont_switch / 2;
+					countdown_out = t_cont_switch;
 					
 					run_job = NULL;
 
@@ -162,11 +168,11 @@ void Simulation(int type){
 				if(temp_ptr != NULL){
 					
 					switch_in = temp_ptr;
-					countdown_in = t_cont_switch / 2; 
+					countdown_in = t_cont_switch; 
 					switch_flag = 1;
 
 					switch_out = run_job;
-					countdown_out = t_cont_switch / 2;
+					countdown_out = t_cont_switch;
 					
 					run_job = NULL;
 
@@ -192,14 +198,14 @@ void Simulation(int type){
 		if (run_job == NULL && !switch_flag) { 
 			switch_in = get_next_job_inqueue(&job_q); 
 			if(switch_in != NULL) { 
-				countdown_in = t_cont_switch / 2; 
+				countdown_in = t_cont_switch; 
 				switch_flag = 1;
 			}
 		}
 
 		//Process move_in content, this operation may start only after move_out
 		//opeation being complete
-		if (switch_in != NULL && switch_out == NULL){
+		if (switch_in != NULL){
 
 			//Check if the operation was done in the last second
 			if(countdown_in <= 0){
@@ -222,12 +228,22 @@ void Simulation(int type){
 
 			//Check if the operation was done in the last second
 			if(switch_out != NULL){
-				update_finish_job(switch_out, timer);
-				update_avg_time( switch_out, &(summarys[type]) );
 
-				//Also update tau
-				IOBlock_job_update(switch_out, &job_q);
-				switch_out = NULL;
+				if(switch_out->state == BLOCKED){
+					update_finish_job(switch_out, timer);
+					update_avg_time( switch_out, &(summarys[type]) );
+
+					//Also update tau
+					IOBlock_job_update(switch_out, &job_q);
+					switch_out = NULL;
+				}
+
+				else if(switch_out->state == COMPLETE){
+					Deinit_J(switch_out);
+					free(switch_out);
+					switch_out = NULL;
+				}
+
 			}
 
 			countdown_out--;
@@ -244,7 +260,7 @@ void Simulation(int type){
 			if(state == 1 || state == 2){
 
 				//Set a flag to move out the content from cache
-				countdown_out = t_cont_switch / 2;
+				countdown_out = t_cont_switch;
 			}
 
 			//IO Blocked, add it back to the queue and do the IO part
@@ -277,19 +293,19 @@ void Simulation(int type){
 						run_job->PID, queue);
 				printf("time %dms: %s\n", timer, buffer);
 
-				Deinit_J(run_job);
-				free(run_job);
+				switch_out = run_job;
 				run_job = NULL;
-				switch_out = NULL;
-				//If all works are done
-				if( check_all_job_done(&process_q, &job_q) && run_job == NULL && 
-					switch_in == NULL && switch_out == NULL) {
-
-					printf("time %dms: Simulator ended for %s [Q <empty>]\n", timer, algo_name);
-
-					break;
-				}
+				
 			}
+		}
+
+		//If all works are done
+		if( check_all_job_done(&process_q, &job_q) && run_job == NULL && 
+				switch_in == NULL && switch_out == NULL) {
+
+				printf("time %dms: Simulator ended for %s [Q <empty>]\n", timer, algo_name);
+
+				break;
 		}
 	}
 

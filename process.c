@@ -102,15 +102,16 @@ int RNG(int m){
 	}
 
 	while(1){
-		result = -log( drand48() ) / Lambda;
 
+		if (m == 1) result = floor( -log( drand48() ) / Lambda );
+		
+		else if (m == 2) result = ceil( -log( drand48() ) / Lambda );
+	
 		if(result > Upperbound) continue;
 		else break;
 	}
 
-	result = (double)result * m + 1;
-
-	if(result == 0) result = 1;
+	result = (double)result;
 
 	return (int)result;
 }
@@ -131,7 +132,6 @@ void Generate_processes(Queue_Process* QP, int num_p){
 	for(int i = 0; i < num_p; i++){
 		Process* p = calloc(1, sizeof(Process));
 
-		//Assign PID (According to sample txt provided by Prof.)
 		
 		//Predict step 1
 		p->arrival = RNG(1);
@@ -146,12 +146,12 @@ void Generate_processes(Queue_Process* QP, int num_p){
 		//Predict step 3
 		for(int a = 0; a < p->num_CPU_burst; a++){
 			if(a == (p->num_CPU_burst - 1)){
-				p->CPU_burst_time[a] = RNG(1);
+				p->CPU_burst_time[a] = RNG(2);
 				p->IO_burst_time[a] = 0;
 			}
 			else{
-				p->CPU_burst_time[a] = RNG(1);
-				p->IO_burst_time[a] = RNG(1);
+				p->CPU_burst_time[a] = RNG(2);
+				p->IO_burst_time[a] = RNG(2);
 			}
 
 		}
